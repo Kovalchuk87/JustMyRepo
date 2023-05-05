@@ -1,0 +1,23 @@
+{
+  "name": "metaltis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:prod": "test_env=prod npx playwright test",
+    "test:stage": "test_env=stage npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "yargs": "^17.7.1"
+  }
+}
