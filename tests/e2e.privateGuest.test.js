@@ -43,9 +43,12 @@ test.describe('Complete order as guest private person', async () => {
     await cartPage.goToCheckout();
     await checkoutPage.privatePersonRadiobutton.isEnabled();
     await checkoutPage.privatePersonRadiobutton.click();
+    await checkoutPage.emailField.isEditable();
+    await checkoutPage.emailField.click();
     await checkoutPage.fillPrivatePersonCheckoutForm(email, name, surname, street, houseNumber, postalCode, phone, city);
     await checkoutPage.createAccountCheckbox.isVisible();
     await checkoutPage.createAccountCheckbox.click();
+    await checkoutPage.billingAsShippingCheckbox.click();
     await checkoutPage.bankTransferPaymentRBtn.click();
     await checkoutPage.termsButton.evaluate((button) => button.remove());// to reach checkbox
     await checkoutPage.acceptTermsCheckbox.click();
