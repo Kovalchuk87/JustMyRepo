@@ -2,8 +2,7 @@ exports.CheckoutPage = class CheckoutPage {
   constructor(page) {
     this.page = page;
     this.companyRadiobutton = page.locator('.label-type-client__name').first();
-    this.privatePersonRadiobutton = page.locator('.label-type-client__name').last();
-
+    this.privatePersonRadiobutton = page.locator('.label-type-client__name').nth(1);
     this.emailField = page.locator('.amcheckout-wrapper .input-text[name="username"]');
     this.createAccountCheckbox = page.locator('.toggle-create-account');
     this.nameField = page.locator('.input-text[name="firstname"]').first();
@@ -23,10 +22,9 @@ exports.CheckoutPage = class CheckoutPage {
     this.cbcPaymentRBtn = page.locator('.label[for="multisafepay_cbc"]');
     this.bankTransferPaymentRBtn = page.locator('.label[for="banktransfer"]');
     this.payPalPaymentRBtn = page.locator('.label[for="paypal_express"]');
-
     this.acceptTermsCheckbox = page.locator('.label[for="agreement__1"]');
-    this.confirmOrderButton = page.locator('.action.primary.checkout.amasty');
-
+    this.confirmOrderButton = page.locator('button.amasty:nth-child(1)');
+    this.billingAsShippingCheckbox = page.locator('.billing-address-same-as-shipping-block')
     this.termsButton = page.locator('.action-show');
   }
 
