@@ -12,10 +12,10 @@ export default defineConfig({
   // Retry on CI only.
   // retries: process.env.CI ? 2 : 0,
   // Opt out of parallel tests on CI.
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: true,
+    headless: false,
     retryOnFail: true,
     screenshot: 'only-on-failure',
     viewport: { width: 1920, height: 1080 },
@@ -31,6 +31,10 @@ export default defineConfig({
     // {
     //   name: 'webkit',
     //   use: { browserName: 'webkit' },
+    // },
+    // {
+    //   name: 'firefox',
+    //   use: { browserName: 'firefox' },
     // },
   ],
 });
